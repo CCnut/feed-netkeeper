@@ -27,7 +27,7 @@ service.placeholder = translate("auto")
 
 
 pppd_options = section:taboption("general",ListValue,"pppd_options",
-	translate("Netkeeper plugin")，
+	translate("Netkeeper plugin"),
 	translate("Choice Netkeeper plugin"))
 
 pppd_options:value("plugin chongqing_sxplugin.so",translate("Netkeeper Chongqing"))
