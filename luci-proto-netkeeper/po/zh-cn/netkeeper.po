@@ -10,7 +10,7 @@ msgstr "闪讯插件"
 msgid "Choice Netkeeper plugin"
 msgstr "选择闪讯拨号插件"
 
-msgid "If Leave empty, no default Mac address is configured"
+msgid "If Leave empty, no default MAC-Address is configured"
 msgstr "留空则不配置Mac地址"
 
 msgid "Netkeeper Chongqing"
