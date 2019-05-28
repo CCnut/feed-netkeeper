@@ -30,18 +30,19 @@ pppd_options = section:taboption("general",ListValue,"pppd_options",
 	translate("Netkeeper plugin"),
 	translate("Choice Netkeeper plugin"))
 
-pppd_options:value("plugin chongqing_sxplugin.so",translate("Netkeeper Chongqing"))
 pppd_options:value("plugin chongqing0094_sxplugin.so",translate("Netkeeper Chongqing 0094"))
-pppd_options:value("plugin xinjiang_sxplugin.so",translate("Netkeeper Xinjiang"))
-pppd_options:value("plugin shandongmobile_sxplugin.so",translate("Netkeeper Shandong Mobile"))
+pppd_options:value("plugin chongqing_sxplugin.so",translate("Netkeeper Chongqing"))
 pppd_options:value("plugin gansu_telecom_sxplugin.so",translate("Netkeeper Gansu"))
 pppd_options:value("plugin hainan_sxplugin.so",translate("Netkeeper Hainan"))
 pppd_options:value("plugin hebei_sxplugin.so",translate("Netkeeper Hebei"))
-pppd_options:value("plugin shanxi_yixun_sxplugin.so",translate("Yixun Shanxi"))
 pppd_options:value("plugin hubei_sxplugin.so",translate("Netkeeper Hubei"))
+pppd_options:value("plugin qinghai_sxplugin.so",translate("Netkeeper Qinghai"))
+pppd_options:value("plugin shandongmobile_4_9_sxplugin.so",translate("Netkeeper Shandong Mobile 4.9"))
+pppd_options:value("plugin shandongmobile_sxplugin.so",translate("Netkeeper Shandong Mobile"))
+pppd_options:value("plugin shanxi_yixun_sxplugin.so",translate("Yixun Shanxi"))
+pppd_options:value("plugin xinjiang_sxplugin.so",translate("Netkeeper Xinjiang"))
 pppd_options:value("plugin zhejiang_qiye_sxplugin.so",translate("Netkeeper Enterprise Zhejiang"))
 pppd_options:value("plugin zhejiang_xiaoyuan_sxplugin.so",translate("Netkeeper School Zhejiang"))
-pppd_options:value("plugin qinghai_sxplugin.so",translate("Netkeeper Qinghai"))
 
 
 macaddr = section:taboption("general", Value, "macaddr",
