@@ -25,6 +25,9 @@ msgstr "新疆闪讯"
 msgid "Netkeeper Shandong Mobile"
 msgstr "山东移动闪讯"
 
+msgid "Netkeeper Shandong Mobile 4.9"
+msgstr "山东移动闪讯4.9"
+
 msgid "Netkeeper Gansu"
 msgstr "甘肃闪讯"
 
