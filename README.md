@@ -7,6 +7,8 @@ netkeeper-interception（闪讯拦截服务）
 luci-app-netkeeper-interception（闪讯拦截服务界面）
 ```
 
+选择```luci-app-netkeeper-interception```即可全部编译
+
 请自行编译安装后使用
 
 # 使用方法
