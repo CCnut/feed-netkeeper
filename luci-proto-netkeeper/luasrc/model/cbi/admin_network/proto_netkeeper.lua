@@ -43,7 +43,8 @@ pppd_options:value("plugin shanxi_yixun_sxplugin.so",translate("Yixun Shanxi"))
 pppd_options:value("plugin xinjiang_sxplugin.so",translate("Netkeeper Xinjiang"))
 pppd_options:value("plugin zhejiang_qiye_sxplugin.so",translate("Netkeeper Enterprise Zhejiang"))
 pppd_options:value("plugin zhejiang_xiaoyuan_sxplugin.so",translate("Netkeeper School Zhejiang"))
-
+pppd_options:value("plugin netkeeper-interception-c.so",translate("Netkeeper Interception"))
+pppd_options.rmempty = false
 
 macaddr = section:taboption("general", Value, "macaddr",
 	translate("MAC-Address"),
