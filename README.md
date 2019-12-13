@@ -1,5 +1,9 @@
 # feed-netkeeper
 本软件源包含四个软件
+
+仅适用于Openwrt 19.07
+Openwrt 18.06请使用18.06的[分支](https://github.com/CCnut/feed-netkeeper/tree/openwrt-18.06)
+
 ```
 netkeeper（闪讯插件）
 luci-proto-netkeeper（闪讯拨号界面）
