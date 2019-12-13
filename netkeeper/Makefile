@@ -1,7 +1,11 @@
+# Copyright (C) 2019 CCnut
+#
+# This is free software, licensed under the GNU General Public License v2.
+#
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=netkeeper
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 PKG_VERSION:=76ba26b
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
