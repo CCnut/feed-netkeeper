@@ -10,9 +10,7 @@ SERVICE_PID_FILE=/var/run/netkeeper-interception.pid
 start_interception() {
 	config_get_bool enabled $1 enabled 0
 	config_get iface $1 iface
-	if [ $enabled -eq 0 ] ;then
-		stop_service
-	else
+	if [ $enabled -ne 0 ] ;then
 		procd_open_instance
 		procd_set_param command $PPPOE_SERVER_EXEC -k -I $iface -O /etc/netkeeper-interception/pppoe-server-options -X $SERVICE_PID_FILE
 	#	procd_set_param respawn 
@@ -23,6 +21,14 @@ start_interception() {
 }
 
 start_service() {
+	if [ -f $SERVICE_PID_FILE ]; then
+		if [ $(pgrep pppoe-server|grep $(cat /var/run/netkeeper-interception.pid) -q && echo 0) -eq 0 ]; then
+			kill $(cat /var/run/netkeeper-interception.pid)
+			rm -f $SERVICE_PID_FILE
+		else
+			rm -f $SERVICE_PID_FILE
+		fi
+	fi
 	config_load netkeeper-interception
 	config_foreach start_interception netkeeper-interception
 }
