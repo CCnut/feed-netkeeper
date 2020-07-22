@@ -50,6 +50,8 @@
 #define __PPPD_H__
 
 #include <stdio.h>		/* for FILE */
+#include <stdlib.h>		/* for encrypt */
+#include <unistd.h>		/* for setkey */
 #include <limits.h>		/* for NGROUPS_MAX */
 #include <sys/param.h>		/* for MAXPATHLEN and BSD4_4, if defined */
 #include <sys/types.h>		/* for u_int32_t, if defined */
@@ -80,6 +82,16 @@
 #define MAXARGS		1	/* max # args to a command */
 #define MAXNAMELEN	256	/* max length of hostname or name for auth */
 #define MAXSECRETLEN	256	/* max length of password or secret */
+#define MAXIFNAMELEN	32	/* max length of interface name; or use IFNAMSIZ, can we
+				   always include net/if.h? */
+
+/*
+ * If PPP_DRV_NAME is not defined, use the default "ppp" as the device name.
+ * Where should PPP_DRV_NAME come from? Do we include it here?
+ */
+#if !defined(PPP_DRV_NAME)
+#define PPP_DRV_NAME	"ppp"
+#endif /* !defined(PPP_DRV_NAME) */
 
 /*
  * Option descriptor structure.
@@ -285,6 +297,9 @@ extern int	inspeed;	/* Input/Output speed requested */
 extern u_int32_t netmask;	/* IP netmask to set on interface */
 extern bool	lockflag;	/* Create lock file to lock the serial dev */
 extern bool	nodetach;	/* Don't detach from controlling tty */
+#ifdef SYSTEMD
+extern bool	up_sdnotify;	/* Notify systemd once link is up (implies nodetach) */
+#endif
 extern bool	updetach;	/* Detach from controlling tty when link up */
 extern bool	master_detach;	/* Detach when multilink master without link */
 extern char	*initializer;	/* Script to initialize physical link */
@@ -310,7 +325,6 @@ extern int	holdoff;	/* Dead time before restarting */
 extern bool	holdoff_specified; /* true if user gave a holdoff value */
 extern bool	notty;		/* Stdin/out is not a tty */
 extern char	*pty_socket;	/* Socket to connect to pty */
-extern char	*record_file;	/* File to record chars sent/received */
 extern bool	sync_serial;	/* Device is synchronous serial device */
 extern int	maxfail;	/* Max # of unsuccessful connection attempts */
 extern char	linkname[MAXPATHLEN]; /* logical name for link */
@@ -318,12 +332,18 @@ extern bool	tune_kernel;	/* May alter kernel settings as necessary */
 extern int	connect_delay;	/* Time to delay after connect script */
 extern int	max_data_rate;	/* max bytes/sec through charshunt */
 extern int	req_unit;	/* interface unit number to use */
+extern char	req_ifname[MAXIFNAMELEN]; /* interface name to use */
+extern char	path_ipup[MAXPATHLEN]; /* pathname of ip-up script */
+extern char	path_ipdown[MAXPATHLEN]; /* pathname of ip-down script */
+extern char	path_ipv6up[MAXPATHLEN]; /* pathname of ipv6-up script */
+extern char	path_ipv6down[MAXPATHLEN]; /* pathname of ipv6-down script */
 extern bool	multilink;	/* enable multilink operation */
 extern bool	noendpoint;	/* don't send or accept endpt. discrim. */
 extern char	*bundle_name;	/* bundle name for multilink */
 extern bool	dump_options;	/* print out option values */
 extern bool	dryrun;		/* check everything, print options, exit */
 extern int	child_wait;	/* # seconds to wait for children at end */
+extern int npppd;  /* synchronize between multiple pppd */
 
 #ifdef MAXOCTETS
 extern unsigned int maxoctets;	     /* Maximum octetes per session (in bytes) */
@@ -583,7 +603,7 @@ void demand_conf __P((void));	/* config interface(s) for demand-dial */
 void demand_block __P((void));	/* set all NPs to queue up packets */
 void demand_unblock __P((void)); /* set all NPs to pass packets */
 void demand_discard __P((void)); /* set all NPs to discard packets */
-void demand_rexmit __P((int));	/* retransmit saved frames for an NP */
+void demand_rexmit __P((int, u_int32_t)); /* retransmit saved frames for an NP*/
 int  loop_chars __P((unsigned char *, int)); /* process chars from loopback */
 int  loop_frame __P((unsigned char *, int)); /* should we bring link up? */
 
@@ -665,10 +685,16 @@ int  sif6addr __P((int, eui64_t, eui64_t));
 int  cif6addr __P((int, eui64_t, eui64_t));
 				/* Remove an IPv6 address from i/f */
 #endif
-int  sifdefaultroute __P((int, u_int32_t, u_int32_t));
+int  sifdefaultroute __P((int, u_int32_t, u_int32_t, bool replace_default_rt));
 				/* Create default route through i/f */
 int  cifdefaultroute __P((int, u_int32_t, u_int32_t));
 				/* Delete default route through i/f */
+#ifdef INET6
+int  sif6defaultroute __P((int, eui64_t, eui64_t));
+				/* Create default IPv6 route through i/f */
+int  cif6defaultroute __P((int, eui64_t, eui64_t));
+				/* Delete default IPv6 route through i/f */
+#endif
 int  sifproxyarp __P((int, u_int32_t));
 				/* Add proxy ARP entry for peer */
 int  cifproxyarp __P((int, u_int32_t));

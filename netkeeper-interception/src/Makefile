@@ -1,4 +1,4 @@
-PPPD_VER=2.4.7
+PPPD_VER=2.4.8
 CFLAGS=-fPIC -DPPPOE_VER='"${PPPD_VER}"'
 
 all:build_dir netkeeper-interception-c netkeeper-interception-s

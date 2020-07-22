@@ -1,4 +1,4 @@
-PPPD_VER=2.4.7
+PPPD_VER=2.4.8
 CFLAGS=-fPIC -DPPPOE_VER='"${PPPD_VER}"'
 
 all:build_dir chongqing_sxplugin chongqing0094_sxplugin hubei_sxplugin zhejiang_xiaoyuan_sxplugin xinjiang_sxplugin qinghai_sxplugin shandongmobile_sxplugin shandongmobile_4_9_sxplugin hebei_sxplugin shanxi_yixun_sxplugin gansu_telecom_sxplugin zhejiang_qiye_sxplugin hainan_sxplugin

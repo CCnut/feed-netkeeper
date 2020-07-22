@@ -29,8 +29,8 @@ define Build/Prepare
 endef
 
 define Package/netkeeper-interception/install
-	$(INSTALL_DIR) $(1)/usr/lib/pppd/2.4.7
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/builds/*.so $(1)/usr/lib/pppd/2.4.7/
+	$(INSTALL_DIR) $(1)/usr/lib/pppd/2.4.8
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/builds/*.so $(1)/usr/lib/pppd/2.4.8/
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./files/netkeeper-interception.init $(1)/etc/init.d/netkeeper-interception
 	$(INSTALL_DIR) $(1)/etc/netkeeper-interception

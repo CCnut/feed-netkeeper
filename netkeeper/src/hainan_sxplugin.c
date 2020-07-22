@@ -9,7 +9,7 @@
 
 typedef unsigned char byte;
 // TODO : change the version here
-char pppd_version[] = "2.4.7";
+char pppd_version[] = "2.4.8";
 
 static char saveuser[MAXNAMELEN] = {0};
 static char savepwd[MAXSECRETLEN] = {0};

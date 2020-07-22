@@ -22,8 +22,8 @@ define Build/Prepare
 endef
 
 define Package/netkeeper/install
-	$(INSTALL_DIR) $(1)/usr/lib/pppd/2.4.7
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/builds/*.so $(1)/usr/lib/pppd/2.4.7
+	$(INSTALL_DIR) $(1)/usr/lib/pppd/2.4.8
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/builds/*.so $(1)/usr/lib/pppd/2.4.8
 	$(INSTALL_DIR) $(1)/lib/netifd/proto
 	$(INSTALL_BIN) ./files/netkeeper.sh $(1)/lib/netifd/proto/
 endef
