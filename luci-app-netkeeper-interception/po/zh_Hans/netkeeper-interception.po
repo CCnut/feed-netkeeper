@@ -9,6 +9,9 @@ msgstr "闪讯拦截"
 msgid "Netkeeper Account Interception Plugin"
 msgstr "闪讯账户拦截插件"
 
+msgid "If disabled, the last authentication will be kept"
+msgstr "如果禁用，将保留最后一次账户认证"
+
 msgid "Specifies the LAN Interface to listen"
 msgstr "指定监听的LAN接口"
 
