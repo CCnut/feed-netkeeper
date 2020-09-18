@@ -1,5 +1,7 @@
 msgid ""
-msgstr "Content-Type: text/plain; charset=UTF-8"
+msgstr ""
+
+"Content-Type: text/plain; charset=UTF-8"
 
 msgid "Netkeeper Interception"
 msgstr "闪讯拦截"
@@ -17,4 +19,4 @@ msgid "Last AuthReq"
 msgstr "Last AuthReq"
 
 msgid "Last PPPoE Server Auth Request (Live Update)"
-msgstr "PPPoE收到的最后一次账户认证请求（实时更新）"
+msgstr "PPPoE服务器收到的最后一次账户认证请求（实时更新）"
