@@ -1,15 +1,25 @@
 # feed-netkeeper
-本软件源包含四个软件
 
-仅适用于Openwrt 19.07
-Openwrt 18.06请使用18.06的[分支](https://github.com/CCnut/feed-netkeeper/tree/openwrt-18.06)
-
+## 本软件源包含四个软件
 ```
 netkeeper（闪讯插件）
 luci-proto-netkeeper（闪讯拨号界面）
 netkeeper-interception（闪讯拦截服务）
 luci-app-netkeeper-interception（闪讯拦截服务界面）
 ```
+
+### [master分支](https://github.com/CCnut/feed-netkeeper/tree/master) 支持Javascript版本的LUCI，以及使用procd_add_reload_trigger作为页面触发器
+### [LUCI-JS-UCITRACK分支](https://github.com/CCnut/feed-netkeeper/tree/LUCI-JS-UCITRACK) 支持Javascript版本的LUCI，以及使用UCITRACK作为页面触发器
+### [LUCI-LUA-UCITRACK分支](https://github.com/CCnut/feed-netkeeper/tree/LUCI-JS-UCITRACK) 支持Lua版本的LUCI，以及使用UCITRACK作为页面触发器
+_2020.09.19 OpenWrt master分支 测试通过_
+
+## 常见问题
+
+如果master和LUCI-JS-UCITRACK分支遇到语言显示问题，请将软件内的```zh_Hans```重命名为```zh-cn```
+
+如果master分支遇到启用按钮无反应问题，请使用[LUCI-JS-UCITRACK分支](https://github.com/CCnut/feed-netkeeper/tree/LUCI-JS-UCITRACK)
+
+如果遇到接口界面看不到闪讯拨号协议问题，请使用[LUCI-LUA-UCITRACK分支](https://github.com/CCnut/feed-netkeeper/tree/LUCI-JS-UCITRACK)
 
 选择```luci-app-netkeeper-interception```即可全部编译
 
