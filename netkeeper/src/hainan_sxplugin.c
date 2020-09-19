@@ -4,12 +4,12 @@
 #include <time.h>
 #include <string.h>
 // TODO : you may obtaion it by git clone https://github.com/squadette/pppd.git
-#include "pppd.h"
+#include "pppd/pppd.h"
 #include "md5.h"
 
 typedef unsigned char byte;
 // TODO : change the version here
-char pppd_version[] = "2.4.7";
+char pppd_version[] = PPPOE_VER;
 
 static char saveuser[MAXNAMELEN] = {0};
 static char savepwd[MAXSECRETLEN] = {0};

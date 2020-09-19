@@ -225,3 +225,4 @@ proto_netkeeper_teardown() {
 [ -n "$INCLUDE_ONLY" ] || {
 	[ -f /usr/lib/pppd/*/rp-pppoe.so ] && add_protocol netkeeper
 }
+

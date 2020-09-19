@@ -3,7 +3,7 @@
 #include <string.h>
 #include <syslog.h>
 #include <netinet/in.h>
-#include "pppd.h"
+#include "pppd/pppd.h"
 typedef unsigned char byte;
 typedef unsigned short uint16_t;
 //TODO : change the version here
