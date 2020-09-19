@@ -10,7 +10,7 @@ s = m:section(TypedSection, "netkeeper-interception")
 s.addremove = false
 s.anonymous = true
 
-enable = s:option(Flag, "enabled", translate("Enable"))
+enable = s:option(Flag, "enabled", translate("Enable"), translate("If disabled, the last authentication will be kept"))
 enable.optional = false
 enable.rmempty = false
 
