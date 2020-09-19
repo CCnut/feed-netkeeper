@@ -2,6 +2,8 @@
 
 # 仅适用于LUCI 19.07 (基于Javascript)
 # LUCI 18.06 (基于Lua) 请使用18.06的[分支](https://github.com/CCnut/feed-netkeeper/tree/openwrt-18.06)
+_2020.09.19 LUCI 20 测试通过_
+
 
 本软件源包含四个软件
 ```
