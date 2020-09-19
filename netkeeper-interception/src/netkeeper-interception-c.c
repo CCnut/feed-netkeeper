@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-//TODO : you may obtaion it by git clone https://github.com/squadette/pppd.git
-#include "pppd.h"
+#include "pppd/pppd.h"
 typedef unsigned char byte;
 //TODO : change the version here
 char pppd_version[] = PPPOE_VER;
