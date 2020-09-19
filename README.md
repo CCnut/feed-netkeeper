@@ -19,7 +19,7 @@ _2020.09.19 OpenWrt master分支 测试通过_
 
 如果master分支遇到启用按钮无反应问题，请使用[LUCI-JS-UCITRACK分支](https://github.com/CCnut/feed-netkeeper/tree/LUCI-JS-UCITRACK)
 
-如果遇到接口界面看不到闪讯拨号协议，请使用[LUCI-LUA-UCITRACK分支](https://github.com/CCnut/feed-netkeeper/tree/LUCI-JS-UCITRACK)
+如果遇到接口界面看不到闪讯拨号协议问题，请使用[LUCI-LUA-UCITRACK分支](https://github.com/CCnut/feed-netkeeper/tree/LUCI-JS-UCITRACK)
 
 选择```luci-app-netkeeper-interception```即可全部编译
 
