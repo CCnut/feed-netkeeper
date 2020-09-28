@@ -15,6 +15,8 @@ _2020.09.19 OpenWrt master分支 测试通过_
 
 ## 常见问题
 
+Mac地址配置功能未经测试，不保证可用
+
 如果master和LUCI-JS-UCITRACK分支遇到语言显示问题，请将软件内的```zh_Hans```重命名为```zh-cn```
 
 如果master分支遇到启用按钮无反应问题，请使用[LUCI-JS-UCITRACK分支](https://github.com/CCnut/feed-netkeeper/tree/LUCI-JS-UCITRACK)
