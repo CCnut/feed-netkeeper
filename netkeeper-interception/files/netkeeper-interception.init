@@ -31,7 +31,11 @@ start_interception() {
 	fi
 	if [ ! -f /tmp/Last_AuthReq ]; then
 		logger "/tmp/Last_AuthReq Not Found,Try to restore Netkeeper AuthReq"
-		cp -f /etc/netkeeper-interception/AuthReq /tmp/Last_AuthReq
+		if [ -f /etc/netkeeper-interception/AuthReq ]; then
+			cp -f /etc/netkeeper-interception/AuthReq /tmp/Last_AuthReq
+		else
+			touch -f /tmp/Last_AuthReq
+		fi
 	fi
 }
 
