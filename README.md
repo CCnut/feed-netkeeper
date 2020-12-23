@@ -8,10 +8,13 @@ netkeeper-interception（闪讯拦截服务）
 luci-app-netkeeper-interception（闪讯拦截服务界面）
 ```
 
-### [master分支](https://github.com/CCnut/feed-netkeeper/tree/master) 支持Javascript版本的LUCI，以及使用procd_add_reload_trigger作为页面触发器
+### [master分支](https://github.com/CCnut/feed-netkeeper/tree/master) 适用于OpenWRT Snapshot分支，支持Javascript版本的LUCI，以及使用procd_add_reload_trigger作为页面触发器
 ### [LUCI-JS-UCITRACK分支](https://github.com/CCnut/feed-netkeeper/tree/LUCI-JS-UCITRACK) 支持Javascript版本的LUCI，以及使用UCITRACK作为页面触发器
-### [LUCI-LUA-UCITRACK分支](https://github.com/CCnut/feed-netkeeper/tree/LUCI-JS-UCITRACK) 支持Lua版本的LUCI，以及使用UCITRACK作为页面触发器
-_2020.09.19 OpenWrt master分支 测试通过_
+### [LUCI-LUA-UCITRACK分支](https://github.com/CCnut/feed-netkeeper/tree/LUCI-JS-UCITRACK) 适用于OpenWRT 18.06分支，支持Lua版本的LUCI，以及使用UCITRACK作为页面触发器
+
+_如果不确定使用哪个，可以试优先尝试使用[LUCI-LUA-UCITRACK分支](https://github.com/CCnut/feed-netkeeper/tree/LUCI-JS-UCITRACK)_
+
+_2020.09.19 OpenWrt Snapshot版本，使用[master分支](https://github.com/CCnut/feed-netkeeper/tree/master) 测试通过_
 
 ## 常见问题
 
